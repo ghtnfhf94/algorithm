@@ -8,11 +8,11 @@ public class Solution {
 		// TODO Auto-generated method stub
 		Scanner sc = new Scanner(System.in);
 		// int n = sc.nextInt();
-		// int K = sc.nextInt();
 		int n = 1;
 		int K = 13;
 		char e = '1';
 		for (int i = 0; i < n; i++) {
+			// int K = sc.nextInt();
 			String target = Integer.toBinaryString(K);
 			int len = target.length() - 1;
 			StringBuffer sb = new StringBuffer();
