@@ -1,16 +1,19 @@
 function solution(lottos, win_nums) {
     var answer = [];
-    let zeroNum = 0;
-    let equalNum = 0;
-    lottos.forEach((item) => {
-        if(item == 0) {
-            zeroNum++;
-        } else if (win_nums.includes(item)) {
-            equalNum++;
-        }
-    })
-    answer = [getResult(equalNum + zeroNum), getResult(equalNum)];
-    console.log(answer);
+    // let zeroNum = 0;
+    // let equalNum = 0;
+    // lottos.forEach((item) => {
+    //     if(item == 0) {
+    //         zeroNum++;
+    //     } else if (win_nums.includes(item)) {
+    //         equalNum++;
+    //     }
+    // })
+    // answer = [getResult(equalNum + zeroNum), getResult(equalNum)];
+    // console.log(answer);
+    const min = lottos.filter((item) => win_nums.includes(item)).length;
+    const zeroNum = lottos.filter((item) => item == 0).length;
+    console.log([getResult(min + zeroNum), getResult(min)]);
 }
 
 const getResult = (target) => {
