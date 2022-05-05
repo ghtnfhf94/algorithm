@@ -8,11 +8,8 @@ function solution(price, money, count) {
       arr.push(price * i);
     }
   }
-  console.log(arr);
-
-  console.log(arr.reduce((acc, val) => acc + val));
-
-  return answer;
+  answer = arr.reduce((acc, val) => acc + val);
+  return money < answer ? answer - money : 0;
 }
 
 solution(3, 20, 4);

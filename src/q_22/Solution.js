@@ -3,10 +3,12 @@ function solution(n) {
 
   let answer = 0;
 
-  while (target++) {
+  while (answer == 0) {
     if (n % target == 1) {
       answer = target;
       break;
+    } else {
+      target++;
     }
   }
 
