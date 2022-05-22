@@ -1,14 +1,13 @@
 function solution(s) {
   const stack = new Stack();
   for (let i = 0; i < s.length; i++) {
-    if (i != 0) {
-      if (s.charAt(i) == stack.peek()) {
-        stack.pop();
-        continue;
-      }
+    if (stack.peek() == s.charAt(i)) {
+      stack.pop();
+      continue;
     }
     stack.push(s.charAt(i));
   }
+  const result = stack.toString() == "" ? 1 : 0;
   console.log(stack.toString());
 }
 
@@ -24,9 +23,6 @@ class Stack {
   }
   peek() {
     return this.arr[this.arr.length - 1];
-  }
-  size() {
-    return this.arr.length;
   }
   toString() {
     return this.arr.join("");
